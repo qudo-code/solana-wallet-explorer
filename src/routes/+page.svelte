@@ -73,8 +73,4 @@
 
         isLoading = false;
     }
-
-    $: console.log("NFTs", {
-        nfts,
-    });
 </script>

@@ -16,9 +16,9 @@
             {/each}
         </div>
     {/if}
-    <div class="row">
+    <div class="row flex-center">
         <div class="col-12 col-lg-6">
-            <input class="input mb-3" type="text" placeholder="Wallet" bind:value={address}>
+            <input class="input mb-3 w-100" type="text" placeholder="Wallet" bind:value={address}>
             <button class="button button-green w-100 flex-center mb-2" on:click={load}>
                 {#if isLoading}
                 <Loader />
@@ -26,6 +26,9 @@
                 Go
                 {/if}
             </button>
+            <a class="button w-100 flex-center mb-2" href="https://github.com/qudo-code/solana-wallet-explorer" target="_blank">
+                GitHub
+            </a>
             <i class="text-gold">{error}</i>
         </div>
     </div>

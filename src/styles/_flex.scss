@@ -1,0 +1,96 @@
+.display-flex {
+    display: flex;
+}
+
+// Handy hacks
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-center-end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.flex-center-start {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.vert-space {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+//justify-content classes
+.justify-content-start {
+    justify-content: flex-start;
+}
+.justify-content-center {
+    justify-content: center;
+}
+.justify-content-end {
+    justify-content: flex-end;
+}
+.justify-content-space-between {
+    justify-content: space-between;
+}
+
+//align-items classes
+.align-items-start {
+    align-items: flex-start;
+}
+.align-items-center {
+    align-items: center;
+}
+.align-items-end {
+    align-items: flex-end;
+}
+
+//flex direction
+.flex-row {
+    flex-direction: row;
+}
+.flex-row-rev {
+    flex-direction: row-reverse;
+}
+.flex-column {
+    flex-direction: column;
+}
+.flex-col-rev {
+    flex-direction: column-reverse;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-1 {
+    flex-grow: 1;
+}
+
+@each $label, $map in $breakpoints {
+    .justify-content-#{$label}-end {
+        @include build-media-queries($map) {
+            justify-content: flex-end;
+        }
+    }
+    
+    .justify-content-#{$label}-center {
+        @include build-media-queries($map) {
+            justify-content: center;
+        }
+    }
+}
+  

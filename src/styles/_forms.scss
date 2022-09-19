@@ -1,0 +1,17 @@
+.input {
+    appearance: none;
+    background: transparent;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--color-gray);
+    padding: 1rem 0.5rem;
+    width: 100%;
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    resize: none;
+}
+
+.dropdown-micro {
+    padding: .5rem;
+    cursor: pointer;
+    // font-size: ;
+}

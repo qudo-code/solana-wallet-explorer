@@ -1,0 +1,84 @@
+.text-micro {
+    font-size: .75rem;
+    letter-spacing: 1px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.font-orbitron {
+    font-family: 'Orbitron', sans-serif;
+}
+
+.font-weight-light {
+    font-weight: var(--font-light);
+}
+
+.font-weight-regular {
+    font-weight: var(--font-regular);
+}
+
+.font-weight-medium {
+    font-weight: var(--font-medium);
+}
+
+.font-weight-bold {
+    font-weight: var(--font-bold);
+}
+
+.text-blue {
+    color: var(--color-blue);
+}
+
+.text-light {
+    color: var(--color-light);
+}
+
+.text-primary {
+    color: var(--color-text-primary);
+}
+
+.text-dark {
+    color: var(--color-dark);
+}
+
+p.text-dark {
+    opacity: .75;
+}
+
+.text-gold {
+    color: var(--color-gold);
+}
+
+.text-red {
+    color: var(--color-red);
+}
+
+.text-green {
+    color: var(--color-green)!important;
+}
+
+.text-purple {
+    color: var(--color-purple);
+}
+
+.text-blue {
+    color: var(--color-blue);
+}
+
+.text-theme {
+    color: var(--selected-theme);
+}
+
+.word-wrap {
+    word-wrap: break-word;
+}
+
+.no-wrap {
+    white-space: nowrap;
+}

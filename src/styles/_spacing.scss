@@ -1,0 +1,90 @@
+$spacing-values: (
+    0: 0,
+    micro: ($spacer * .02) + rem,
+    1: ($spacer * .04) + rem,
+    2: ($spacer * .075) + rem,
+    3: ($spacer * .1) + rem,
+    4: ($spacer * .15) + rem,
+    5: ($spacer * .2) + rem,
+);
+
+$spacing-properties: (
+    m: "margin",
+    p: "padding"
+);
+
+.section {
+  margin-bottom: 8rem;
+}
+
+// .p-micro {
+//   padding: .5rem
+// }
+
+@each $prefix, $property in $spacing-properties {
+  @each $key, $val in $spacing-values {
+    .#{$prefix}-#{$key} {
+      #{$property}: $val;
+    }
+    .#{$prefix}y-#{$key} {
+      #{$property}-top: $val;
+      #{$property}-bottom: $val;
+    }
+    .#{$prefix}x-#{$key} {
+      #{$property}-left: $val;
+      #{$property}-right: $val;
+    }
+    .#{$prefix}r-#{$key} {
+      #{$property}-right: $val;
+    }
+    .#{$prefix}l-#{$key} {
+      #{$property}-left: $val;
+    }
+    .#{$prefix}t-#{$key} {
+      #{$property}-top: $val;
+    }
+    .#{$prefix}b-#{$key} {
+      #{$property}-bottom: $val;
+    }
+
+    @each $label, $map in $breakpoints {
+      .#{$prefix}-#{$label}-#{$key} {
+        @include build-media-queries($map) {
+          #{$property}: $val;
+        }
+      }
+      .#{$prefix}y-#{$label}-#{$key} {
+        @include build-media-queries($map) {
+          #{$property}-top: $val;
+          #{$property}-bottom: $val;
+        }
+      }
+      .#{$prefix}x-#{$label}-#{$key} {
+        @include build-media-queries($map) {
+          #{$property}-left: $val;
+          #{$property}-right: $val;
+        }
+      }
+      .#{$prefix}r-#{$label}-#{$key} {
+        @include build-media-queries($map) {
+          #{$property}-right: $val;
+        }
+      }
+      .#{$prefix}l-#{$label}-#{$key} {
+        @include build-media-queries($map) {
+          #{$property}-left: $val;
+        }
+      }
+      .#{$prefix}t-#{$label}-#{$key} {
+        @include build-media-queries($map) {
+          #{$property}-top: $val;
+        }
+      }
+      .#{$prefix}b-#{$label}-#{$key} {
+        @include build-media-queries($map) {
+          #{$property}-bottom: $val;
+        }
+      }
+    }
+  }
+}

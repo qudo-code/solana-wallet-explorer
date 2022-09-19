@@ -1,0 +1,46 @@
+// Size controlled by icon.svelte
+.icon {
+    width: auto;
+    height: var(--icon-normal);
+    height: 1rem;
+
+    &[data-size="medium"] {
+        height: var(--icon-medium);
+    }
+
+    &[data-size="large"] {
+        height: var(--icon-large);
+    }
+
+    use[data-color="light"]  {
+        fill: var(--color-text-primary);
+    }
+
+    use[data-color="dark"] {
+        fill: var(--color-black);
+    }
+
+    use[data-color="danger"] {
+        fill: var(--color-red);
+    }
+
+    path {
+        fill: var(--color-light);
+    }
+}
+
+.icon-large {
+    height: var(--icon-large);
+}
+
+.icon-medium {
+    height: var(--icon-medium);
+}
+
+.icon-cache {
+    display: none;
+}
+
+.icon-gold {
+    fill: var(--color-gold);
+}

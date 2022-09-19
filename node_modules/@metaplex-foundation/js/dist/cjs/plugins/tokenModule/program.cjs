@@ -1,0 +1,23 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var splToken = require('@solana/spl-token');
+var gpaBuilders = require('./gpaBuilders.cjs');
+
+/** @group Programs */
+const TokenProgram = {
+  publicKey: splToken.TOKEN_PROGRAM_ID,
+
+  mintAccounts(metaplex) {
+    return new gpaBuilders.MintGpaBuilder(metaplex, this.publicKey);
+  },
+
+  tokenAccounts(metaplex) {
+    return new gpaBuilders.TokenGpaBuilder(metaplex, this.publicKey);
+  }
+
+};
+
+exports.TokenProgram = TokenProgram;
+//# sourceMappingURL=program.cjs.map

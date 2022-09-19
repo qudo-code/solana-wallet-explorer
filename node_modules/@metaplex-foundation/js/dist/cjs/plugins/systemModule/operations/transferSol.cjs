@@ -1,0 +1,79 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var web3_js = require('@solana/web3.js');
+var Operation = require('../../../types/Operation.cjs');
+var Amount = require('../../../types/Amount.cjs');
+var TransactionBuilder = require('../../../utils/TransactionBuilder.cjs');
+
+// -----------------
+// Operation
+// -----------------
+const Key = 'TransferSolOperation';
+/**
+ * @group Operations
+ * @category Constructors
+ */
+
+const transferSolOperation = Operation.useOperation(Key);
+/**
+ * @group Operations
+ * @category Types
+ */
+
+/**
+ * @group Operations
+ * @category Handlers
+ */
+const transferSolOperationHandler = {
+  async handle(operation, metaplex, scope) {
+    const builder = transferSolBuilder(metaplex, operation.input);
+    return builder.sendAndConfirm(metaplex, operation.input.confirmOptions);
+  }
+
+}; // -----------------
+// Builder
+// -----------------
+
+/**
+ * @group Transaction Builders
+ * @category Inputs
+ */
+
+/**
+ * @group Transaction Builders
+ * @category Constructors
+ */
+const transferSolBuilder = (metaplex, params) => {
+  var _params$instructionKe;
+
+  const {
+    from = metaplex.identity(),
+    to,
+    amount,
+    basePubkey,
+    seed,
+    program = web3_js.SystemProgram.programId
+  } = params;
+  Amount.assertSol(amount);
+  return TransactionBuilder.TransactionBuilder.make().add({
+    instruction: web3_js.SystemProgram.transfer({
+      fromPubkey: from.publicKey,
+      toPubkey: to,
+      lamports: amount.basisPoints.toNumber(),
+      ...(basePubkey ? {
+        basePubkey,
+        seed
+      } : {}),
+      programId: program
+    }),
+    signers: [from],
+    key: (_params$instructionKe = params.instructionKey) !== null && _params$instructionKe !== void 0 ? _params$instructionKe : 'transferSol'
+  });
+};
+
+exports.transferSolBuilder = transferSolBuilder;
+exports.transferSolOperation = transferSolOperation;
+exports.transferSolOperationHandler = transferSolOperationHandler;
+//# sourceMappingURL=transferSol.cjs.map

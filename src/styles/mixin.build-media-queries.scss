@@ -1,0 +1,15 @@
+@mixin build-media-queries($map) {
+  @if map-has-key($map, min-width) and map-has-key($map, max-width) {
+    @media only screen and (min-width: map-get($map, min-width)) and (max-width: map-get($map, max-width)) { 
+      @content;
+    }
+  } @else if map-has-key($map, min-width) {
+    @media only screen and (min-width: map-get($map, min-width)) { 
+      @content;
+    }
+  } @else if map-has-key($map, max-width) {
+    @media only screen and (max-width: map-get($map, max-width)) { 
+      @content;
+    }
+  }
+}

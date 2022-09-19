@@ -1,0 +1,32 @@
+.opacity-100 {
+  opacity: 1;
+}
+.opacity-75 {
+  opacity: 0.75;
+}
+
+.opacity-50 {
+  opacity: 0.5;
+}
+
+.opacity-40 {
+  opacity: 0.4;
+}
+
+.opacity-0 {
+  opacity: 0;
+}
+
+@each $label, $map in $breakpoints {
+  .opacity-#{$label}-100 {
+    @include build-media-queries($map) {
+      opacity: 1;
+    }
+  }
+  
+  .opacity-#{$label}-0 {
+    @include build-media-queries($map) {
+      opacity: 0;
+    }
+  }
+}

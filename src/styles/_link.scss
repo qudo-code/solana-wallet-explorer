@@ -1,0 +1,15 @@
+.link {
+    border-width: 0 0 1px 0;
+    border-style: dotted;
+    text-decoration: none;
+    color: var(--text-light);
+
+    &:visited {
+        color:inherit;
+    }
+}
+
+.no-decoration {
+    text-decoration: none;
+    border-width: 0;
+}

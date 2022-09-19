@@ -1,0 +1,20 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var web3_js = require('@solana/web3.js');
+
+const toPublicKey = value => {
+  if (typeof value === 'object' && 'publicKey' in value) {
+    return value.publicKey;
+  }
+
+  if (typeof value === 'object' && 'address' in value) {
+    return value.address;
+  }
+
+  return new web3_js.PublicKey(value);
+};
+
+exports.toPublicKey = toPublicKey;
+//# sourceMappingURL=PublicKey.cjs.map

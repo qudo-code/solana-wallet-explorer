@@ -1,0 +1,18 @@
+.card {
+    background: var(--color-gray);
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.card-dark {
+    background: var(--color-black);
+}
+
+.card-green {
+    background: var(--color-green);
+}
+
+.card-blue {
+    background: var(--color-blue);
+}

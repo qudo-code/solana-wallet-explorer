@@ -1,0 +1,35 @@
+.display-flex {
+  display: block;
+}
+
+.display-inline-flex {
+  display: inline-flex;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+@each $label, $map in $breakpoints {
+  .display-#{$label}-flex {
+    @include build-media-queries($map) {
+      display: flex;
+    }
+  }
+  
+  .display-#{$label}-block {
+    @include build-media-queries($map) {
+      display: block;
+    }
+  }
+
+  .display-#{$label}-none {
+    @include build-media-queries($map) {
+      display: none;
+    }
+  }
+}

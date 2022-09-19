@@ -1,0 +1,19 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var mplTokenMetadata = require('@metaplex-foundation/mpl-token-metadata');
+var gpaBuilders = require('./gpaBuilders.cjs');
+
+/** @group Programs */
+const TokenMetadataProgram = {
+  publicKey: mplTokenMetadata.PROGRAM_ID,
+
+  metadataV1Accounts(metaplex) {
+    return new gpaBuilders.MetadataV1GpaBuilder(metaplex, this.publicKey);
+  }
+
+};
+
+exports.TokenMetadataProgram = TokenMetadataProgram;
+//# sourceMappingURL=program.cjs.map

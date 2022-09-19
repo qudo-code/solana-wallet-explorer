@@ -1,0 +1,19 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+var mplCandyMachine = require('@metaplex-foundation/mpl-candy-machine');
+var gpaBuilders = require('./gpaBuilders.cjs');
+
+/** @group Programs */
+const CandyMachineProgram = {
+  publicKey: mplCandyMachine.PROGRAM_ID,
+
+  accounts(metaplex) {
+    return new gpaBuilders.CandyMachineGpaBuilder(metaplex, this.publicKey);
+  }
+
+};
+
+exports.CandyMachineProgram = CandyMachineProgram;
+//# sourceMappingURL=program.cjs.map

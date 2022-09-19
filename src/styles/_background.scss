@@ -1,0 +1,33 @@
+.background-white {
+    background: var(--color-light);
+}
+.background-light-gray {
+    background: var(--color-light-gray);
+}
+.background-gray {
+    background: var(--color-gray);
+}
+.background-dark {
+    background: var(--color-dark);
+}
+.background-black {
+    background: var(--color-black);
+}
+.background-green {
+    background: var(--color-green) !important;
+}
+.background-purple {
+    background: var(--color-purple) !important;
+}
+.background-pink {
+    background: var(--color-pink) !important;
+}
+.background-blue {
+    background: var(--color-blue) !important;
+}
+.background-theme {
+    background: var(--selected-theme) !important;
+}
+.background-gold {
+    background: var(--color-gold) !important;
+}

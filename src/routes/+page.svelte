@@ -40,6 +40,8 @@
     import Loader from "src/components/loader.svelte";
     import NFT from "src/components/nft.svelte";
 
+    import getNFTs from "src/util/solana/get-nfts";
+
     let address = "";
     let error = "";
     let isLoading = false;
@@ -62,11 +64,7 @@
         }
 
         try {
-            const response = await fetch(`/api/solana/nfts/${address}`);
-
-            const { data } = await response.json();
-
-            nfts = data;
+            nfts = await getNFTs(address);
         } catch (err) {
             console.log(err);
 
@@ -78,5 +76,5 @@
 
     $: console.log("NFTs", {
         nfts,
-    })
+    });
 </script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="description" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#000000">
+
+		<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+		<link rel="manifest" href="/favicon/site.webmanifest">
+
+		<title>Solana Wallet Explorer</title>
+		<meta http-equiv="content-security-policy" content="">
+	<link rel="modulepreload" href="/_app/immutable/start-b9ddad0b.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/index-92b119e8.js">
+	<link rel="modulepreload" href="/_app/immutable/chunks/singletons-2b362108.js">
+	</head>
+	<body>
+		
+		<script type="module" data-sveltekit-hydrate="45h">
+		import { set_public_env, start } from "/_app/immutable/start-b9ddad0b.js";
+
+		set_public_env({});
+
+		start({
+			target: document.querySelector('[data-sveltekit-hydrate="45h"]').parentNode,
+			paths: {"base":"","assets":""},
+			route: true,
+			spa: true,
+			trailing_slash: "never",
+			hydrate: null
+		});
+	</script>
+	</body>
+</html>
